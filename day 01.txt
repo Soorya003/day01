@@ -1,0 +1,81 @@
+1)Write a blog on Difference between HTTP1.1 vs HTTP2
+                                       DIFFERENCE BETWEEN HTTP1.1 VS HTTP2
+
+In the fast-paced world of the internet, where every millisecond counts, the protocols governing web communications play a pivotal role in determining the speed and efficiency of data exchange. 
+Among these, HTTP (Hypertext Transfer Protocol) stands as the cornerstone, facilitating the seamless transfer of information between clients and servers. 
+However, not all HTTP protocols are created equal. 
+In this blog, we'll delve into the distinctions between two major versions: HTTP/1.1 and its successor, HTTP/2.
+
+1. Multiplexing:
+One of the most significant advancements brought by HTTP/2 is multiplexing.
+ In HTTP/1.1, each request-response cycle typically requires a new TCP connection, leading to inefficiencies due to connection setup overhead and head-of-line blocking issues.
+ HTTP/2 addresses this limitation by enabling multiplexed streams within a single TCP connection.
+ This means multiple requests and responses can be interleaved and sent concurrently over the same connection, significantly reducing latency and improving overall performance.
+
+2. Header Compression:
+In HTTP/1.1, headers are sent as plaintext with each request and response, resulting in redundant data transmission and increased overhead, especially for repetitive headers like cookies or user agents.
+ HTTP/2 introduces header compression techniques such as HPACK, which compresses headers before transmission and maintains a dynamic dictionary of frequently used header field representations.
+ This significantly reduces the size of headers exchanged between clients and servers, leading to faster data transfer and improved network utilization.
+
+3. Server Push:
+Another noteworthy feature of HTTP/2 is server push, which allows servers to proactively send resources to clients before they are explicitly requested.
+ In HTTP/1.1, web developers often resort to techniques like inlining or concatenating resources to reduce the number of round trips required to fetch all necessary assets. 
+With server push in HTTP/2, servers can push related resources (e.g., CSS, JavaScript) to clients based on predictive algorithms or prior knowledge, eliminating the need for additional client requests.
+
+4. Stream Prioritization:
+HTTP/2 introduces the concept of stream prioritization, allowing clients to assign relative importance to different resources within a single connection.
+ This enables more efficient resource allocation, especially in scenarios where multiple resources are competing for limited bandwidth. 
+By prioritizing critical resources such as essential scripts or visible content, web developers can ensure a smoother user experience, even under challenging network conditions.
+
+5. Binary Protocol:
+While HTTP/1.1 relies on textual representations for communication, HTTP/2 adopts a binary framing layer that encapsulates HTTP messages for transmission.
+ This binary format offers several advantages, including more efficient parsing, reduced overhead, and enhanced security against certain types of attacks (e.g., header injection).
+ The binary nature of HTTP/2 contributes to improved performance and interoperability across different platforms and devices.
+
+
+In conclusion, the transition from HTTP/1.1 to HTTP/2 represents a significant evolution in web communication protocols, offering a range of enhancements geared towards optimizing speed, efficiency, and security.
+ By embracing features such as multiplexing, header compression, server push, stream prioritization, and a binary framing layer, HTTP/2 paves the way for a faster, more responsive web experience for users and developers alike.
+ As the internet continues to evolve, staying abreast of these technological advancements becomes imperative for building resilient and scalable web applications in the digital age.
+
+2)Write a blog about objects and its internal representation in Javascript
+                                  OBJECTS AND ITS INTERNAL REPRESENTATION IN JAVASCRIPT
+
+In the realm of JavaScript, objects reign supreme. 
+They are the building blocks of virtually every application, providing a flexible and powerful means of organizing and manipulating data. 
+However, beneath their seemingly simple facade lies a complex internal representation that governs their behavior and interactions within the JavaScript runtime environment. 
+In this blog, we'll embark on a journey to uncover the inner workings of objects in JavaScript and explore how they are represented under the hood.
+
+The Essence of Objects:
+At its core, an object in JavaScript is a collection of key-value pairs, where each key (or property) maps to a value (or method). 
+Objects can represent a wide range of entities, from simple data structures like arrays and dictionaries to more complex entities like functions and classes. 
+This versatility makes objects a fundamental concept in JavaScript programming, empowering developers to model real-world entities and encapsulate behavior within their applications.
+
+
+Understanding the Prototype Chain:
+One of the key features that sets JavaScript apart from other programming languages is its prototype-based inheritance model. 
+Each object in JavaScript is associated with a prototype object, which serves as a template for inheritance. 
+When accessing a property or method on an object, if it's not found directly on the object itself, JavaScript traverses up the prototype chain until it finds a matching property or reaches the end of the chain (usually the built-in Object.prototype). 
+This mechanism allows for dynamic inheritance and enables objects to inherit properties and methods from their prototypes.
+
+The Role of the [[Prototype]] Property:
+Behind the scenes, JavaScript objects maintain a hidden [[Prototype]] property that references their prototype object. 
+This property is not directly accessible through regular JavaScript code but can be accessed using the Object.getPrototypeOf() method or the __proto__ property (though the latter is deprecated). 
+By manipulating the [[Prototype]] property, developers can implement custom inheritance patterns.
+
+Object Representation in Memory:
+When it comes to memory allocation, JavaScript engines employ various strategies to represent objects efficiently. 
+Objects are typically stored in memory as key-value maps, where each property is associated with a memory address pointing to its corresponding value. 
+JavaScript engines may employ optimization techniques such as inline caching and hidden classes to optimize property access and improve runtime performance.
+
+Serialization and Deserialization:
+In addition to their runtime representation, JavaScript objects can also be serialized into JSON (JavaScript Object Notation) format for storage or transmission over the network. 
+Serialization involves converting an object into a string representation, typically using the JSON.stringify() method, while deserialization entails reconstructing an object from its serialized JSON representation using JSON.parse(). 
+
+
+Conclusion:
+Objects lie at the heart of JavaScript programming, serving as the cornerstone of data modeling and manipulation. 
+By understanding their internal representation and the mechanisms that govern their behavior, developers can leverage the full power of objects to build robust and maintainable JavaScript applications. 
+Whether it's modeling complex data structures, implementing inheritance hierarchies, or serializing objects for storage or transmission, mastering the intricacies of objects is essential for unlocking the full potential of JavaScript development.
+
+
+
